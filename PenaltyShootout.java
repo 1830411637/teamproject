@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class  PenaltyShootout {
     public static void main(String[] args) {
+        logIn lI=new logIn();
+        lI.use();
         footballTeam[] teams = new footballTeam[3];
         //Add individual information for several teams
         teams[0] = new footballTeam(1, "Brazil", 5, "Neymar", "Yellow-blue", "Good at offense");
