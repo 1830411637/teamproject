@@ -19,6 +19,7 @@ public class  PenaltyShootout {
             System.out.println("2,Query the details of a team based on ID");
             System.out.println("3,Add team information");
             System.out.println("4,Penalty shootouts");
+            System.out.println("5,Delete team information");
             System.out.println("Please enter your operation command:");
             int number = sc.nextInt();
             switch (number) {
@@ -44,6 +45,12 @@ public class  PenaltyShootout {
                     System.out.println("Please enter the ID of the second team：");
                     int teamIndex2 = sc.nextInt();
                     fight.ft();
+                    break;
+                case 5:
+                    //Delete teams
+                    System.out.println("Please enter the ID of the team you want to delete:");
+                    int deleteId = sc.nextInt();
+                    teams1.delete(deleteId);
                     break;
                 default:
                     System.out.println("There is a problem with the command you entered");

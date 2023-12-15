@@ -71,5 +71,31 @@ public class footballTeamOperator {
         teams = teams1;
         System.out.println("Team information added successfully!");
     }
+    public void delete(int id) {
+        // Find the index of the team to be deleted
+        int deleteIndex = -1;
+        for (int i = 0; i < teams.length; i++) {
+            if (teams[i].getId() == id) {
+                deleteIndex = i;
+                break;
+            }
+        }
+        if (deleteIndex == -1) {
+            System.out.println("No team information found with the provided ID");
+        } else {
+            // Create a new array which is 1 less than the original array
+            footballTeam[] teams1 = new footballTeam[teams.length - 1];
+            // Copy the contents of the original array into the new array, skipping the deleted team
+            for (int i = 0, k = 0; i < teams.length; i++) {
+                if (i == deleteIndex) {
+                    continue;
+                }
+                teams1[k++] = teams[i];
+            }
+            // Update the original Teams array to the new array contents
+            teams = teams1;
+            System.out.println("Team information deleted successfully!");
+        }
+    }
 }
 
