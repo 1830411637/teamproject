@@ -37,6 +37,7 @@ public class footballTeamOperator {
                 System.out.println("The well-known names of the team are:" + football.getCelebrity());
                 System.out.println("The colors of the team's clothes are:" + football.getClothes());
                 System.out.println("The team's fighting style is:" +football.getStyle());
+                System.out.println("------------------------");
                 return;
             }
         }
@@ -73,21 +74,21 @@ public class footballTeamOperator {
     }
     public void delete(int id) {
         // Find the index of the team to be deleted
-        int deleteIndex = -1;
+        int delete = -1;
         for (int i = 0; i < teams.length; i++) {
             if (teams[i].getId() == id) {
-                deleteIndex = i;
+                delete = i;
                 break;
             }
         }
-        if (deleteIndex == -1) {
+        if (delete == -1) {
             System.out.println("No team information found with the provided ID");
         } else {
             // Create a new array which is 1 less than the original array
             footballTeam[] teams1 = new footballTeam[teams.length - 1];
             // Copy the contents of the original array into the new array, skipping the deleted team
             for (int i = 0, k = 0; i < teams.length; i++) {
-                if (i == deleteIndex) {
+                if (i == delete) {
                     continue;
                 }
                 teams1[k++] = teams[i];
